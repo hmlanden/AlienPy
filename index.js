@@ -2,7 +2,7 @@
 var $tbody = document.querySelector("tbody");
 
 // Create a variable to reference the dataset
-var dataset = alienData;
+var dataset = aliendata;
 
 
 // Define a function to create the table from the data file
