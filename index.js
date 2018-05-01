@@ -25,15 +25,15 @@ var $durationFilter = document.querySelector("#filterDuration");
 // Add appropriate listeners to buttons so we can tell when it's clicked
 $searchButton.addEventListener("click", searchButtonClicked);
 $reloadButton.addEventListener("click", reloadButtonClicked);
-$dateFilter.addEventListener("click", filterSelected(datetime));
-$cityFilter.addEventListener("click", filterSelected(city));
-$stateFilter.addEventListener("click", filterSelected(state));
-$countryFilter.addEventListener("click", filterSelected(country));
-$durationFilter.addEventListener("click", filterSelected(duration));
+//$dateFilter.addEventListener("click", filterSelected());
+//$cityFilter.addEventListener("click", filterSelected());
+//$stateFilter.addEventListener("click", filterSelected());
+//$countryFilter.addEventListener("click", filterSelected());
+//$durationFilter.addEventListener("click", filterSelected());
 
 // Create a variable to reference the dataset and the initial filter
 var dataset = dataSet
-var filterCriteria = datetime
+//var filterCriteria = datetime
 
 // Define a function to create the table from the data file
 function createTable() {
@@ -60,10 +60,10 @@ function createTable() {
 }
 
 // function for selecting a filter
-function filterSelected(selectedFilter) {
-    filterCriteria = selectedFilter
-    console.log(filterCriteria)
-}
+//function filterSelected() {
+//    filterCriteria = selectedFilter
+//    console.log(filterCriteria)
+//}
 
 // function for when you click the button 
 function searchButtonClicked() {
@@ -75,7 +75,7 @@ function searchButtonClicked() {
 
         // filter on date
         dataset = dataset.filter(function (row) {
-            return row.filterCriteria === searchInput;
+            return row.datetime === searchInput;
         });
 
     } catch {
