@@ -1,11 +1,16 @@
 // Get a reference to the table
 var $tbody = document.querySelector("tbody");
 
-// Get a reference to the date column
+// Get a reference to the columns
 var datetime = document.querySelector("#datetime")
+var city = document.querySelector("#city")
+var state = document.querySelector("#state")
+var country = document.querySelector("#country")
+var shape = document.querySelector("#shape")
+var duration = document.querySelector("#duration")
 
 // Get a reference to the search box and buttons
-var $dateInput = document.querySelector("#search");
+var $searchInput = document.querySelector("#search");
 var $searchButton = document.querySelector("#searchButton");
 var $reloadButton = document.querySelector("#reloadButton");
 
@@ -17,6 +22,7 @@ $reloadButton.addEventListener("click", reloadButtonClicked);
 
 // Create a variable to reference the dataset
 var dataset = dataSet
+
 
 // Define a function to create the table from the data file
 function createTable() {
@@ -44,21 +50,23 @@ function createTable() {
 
 // function for when you click the button 
 function searchButtonClicked() {
-    // Get date input
-    var dateInput = $dateInput.value;
+    dataset = dataSet
 
-    console.log(dateInput)
     try {
+        // Get search input
+        var searchInput = $searchInput.value;
+
         // filter on date
         dataset = dataset.filter(function (row) {
-            return row.datetime === dateInput;
+            return row.datetime === searchInput;
         });
 
-        // recreate table
-        createTable();
     } catch {
         console.log(Error)
-    } finally {}
+    } finally {
+        // recreate table
+        createTable();
+    }
 
 }
 
