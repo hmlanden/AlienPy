@@ -15,11 +15,11 @@ var $searchButton = document.querySelector("#searchButton");
 var $reloadButton = document.querySelector("#reloadButton");
 
 // get a reference to the filters
-var $dateFilter = document.querySelector("#filterDate");
-var $cityFilter = document.querySelector("#filterCity");
-var $stateFilter = document.querySelector("#filterState");
-var $countryFilter = document.querySelector("#filterCountry");
-var $durationFilter = document.querySelector("#filterDuration");
+// var $dateFilter = document.querySelector("#filterDate");
+// var $cityFilter = document.querySelector("#filterCity");
+// var $stateFilter = document.querySelector("#filterState");
+// var $countryFilter = document.querySelector("#filterCountry");
+// var $durationFilter = document.querySelector("#filterDuration");
 
 
 // Add appropriate listeners to buttons so we can tell when it's clicked
@@ -40,7 +40,7 @@ function createTable() {
     $tbody.innerHTML = "";
 
     //iterate through the whole dataset
-    for (var i = 0; i < 200; i++) {
+    for (var i = 0; i < 350; i++) {
         var sighting = dataset[i];
 
         // pull out the individual data values from each item
@@ -68,7 +68,6 @@ function createTable() {
 // function for when you click the button 
 function searchButtonClicked() {
     dataset = dataSet
-
     try {
         // Get search input
         var searchInput = $searchInput.value;
@@ -77,11 +76,9 @@ function searchButtonClicked() {
         dataset = dataset.filter(function (row) {
             return row.datetime === searchInput;
         });
-
     } catch {
         console.log(Error)
     } finally {
-        // recreate table
         createTable();
     }
 
