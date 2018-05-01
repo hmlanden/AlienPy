@@ -12,42 +12,52 @@
 <body>
 
     <!-- Page Header -->
-    <div class="container-fluid text-info">
+    <div class="container-fluid text-primary">
         <h1 class="display-1">Alien Sightings</h1>
     </div>
+
 
     <!--Page Introduction -->
     <div class="container-fluid">
         <div class="row">
             <div class="col align-self-center">
-                <p>WAKE UP SHEEPLE! Ths come to Earth and we here at <strong>www.ALIENS-R-REAL.com</strong> have collected all of the eye-witness reports we could to prove it!</p>
-                <p>The planet Earth needs to know what we have found!</p>
+                <blockquote class="blockquote">
+                    <p>"Alien dreams have always been powered by the desire for human importance in a vast, forgetful cosmos: We want to be seen so we know we exist. What’s unusual about the alien fantasy is that, unlike religion, nationalism, or conspiracy theory, it doesn’t place humans at the center of a grand story. In fact, it displaces them: Humans become, briefly, major players in a drama of almost inconceivable scale, the lasting lesson of which is, unfortunately: We’re total nobodies. That’s the lesson, at least, of a visit from aliens, who got here long before we were able to get there, wherever there is; if humans are the ones making first contact, we’re the advanced ones and the aliens are probably more like productive pond scum, which may be one reason we fantasize about those kinds of encounters a lot less than visits to Earth. Of course, when the aliens are the explorers, we’re the pond scum."</p>
+                    <footer class="blockquote-footer"> David Wallace-Wells, James D. Walsh, Neel Patel, Clint Rainey, Katie Heaney, Eric Benson, and Tim Urban <cite title="Source Title">in <a href="http://nymag.com/selectall/2018/03/13-reasons-to-believe-aliens-are-real.html">NY Mag</a></cite></footer>
+                </blockquote>
             </div>
         </div>
     </div>
+
+    <!-- Sighting Header -->
+    <div class="container-fluid text-info">
+        <h4 class="display-4">Search Recorded UFO Encounters</h4>
+    </div>
+
+    <!-- Search Bar -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1.75 justify-content-around offset-1">
+            <div class="col-1 justify-content-end">
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle no-gutter" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Filter</button>
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Date</a>
-                        <a class="dropdown-item" href="#">City</a>
-                        <a class="dropdown-item" href="#">State</a>
-                        <a class="dropdown-item" href="#">County</a>
-                        <a class="dropdown-item" href="#">Shape</a>
-                        <a class="dropdown-item" href="#">Duration</a>
+                        <a class="dropdown-item" id="filterDate">Date</a>
+                        <a class="dropdown-item" id="filterCity">City</a>
+                        <a class="dropdown-item" id="filterState">State</a>
+                        <a class="dropdown-item" id="filterCountry">Country</a>
+                        <a class="dropdown-item" id="filterShape">Shape</a>
+                        <a class="dropdown-item" id="filterDuration">Duration</a>
                     </div>
                 </div>
             </div>
-            <div class="col-7 justify-content-start">
-                <input type="text" class="form-control no-gutter" id="search" placeholder="Search">
+            <div class="col-6 justify-content-start">
+                <input type="text" class="form-control" id="search" placeholder="Search">
             </div>
-            <div class="col-1 align-self-center">
+            <div class="col justify-items-start">
                 <div class="form-group">
-                    <a id="searchButton" class="btn btn-primary text-white">Search</a>
+                    <a id="searchButton" class="btn btn-primary btn-md text-white">Search All</a>
                     <br>
-                    <a id="reloadButton" class="btn btn-danger text-white">Reload</a>
+                    <a id="reloadButton" class="btn btn-danger text-white">Reload Data</a>
                 </div>
             </div>
         </div>
@@ -56,7 +66,7 @@
     <!-- Table with Alien Data -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-9 offset-1">
+            <div class="col-9">
                 <table class="table table-responsive table-hover table-bordered table-striped table-light">
                     <thead class="bg-info text-white">
                         <tr>
