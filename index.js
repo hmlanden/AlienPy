@@ -15,25 +15,35 @@ var $searchButton = document.querySelector("#searchButton");
 var $reloadButton = document.querySelector("#reloadButton");
 
 // get a reference to the filters
-// var $dateFilter = document.querySelector("#filterDate");
-// var $cityFilter = document.querySelector("#filterCity");
-// var $stateFilter = document.querySelector("#filterState");
-// var $countryFilter = document.querySelector("#filterCountry");
-// var $durationFilter = document.querySelector("#filterDuration");
+var $dateFilter = document.querySelector("#filterDate")
+var $cityFilter = document.querySelector("#filterCity")
+var $stateFilter = document.querySelector("#filterState")
+var $countryFilter = document.querySelector("#filterCountry")
+var $shapeFilter = document.querySelector("#filterShape")
+var $durationFilter = document.querySelector("#filterDuration")
 
 
 // Add appropriate listeners to buttons so we can tell when it's clicked
 $searchButton.addEventListener("click", searchButtonClicked);
 $reloadButton.addEventListener("click", reloadButtonClicked);
-//$dateFilter.addEventListener("click", filterSelected());
-//$cityFilter.addEventListener("click", filterSelected());
-//$stateFilter.addEventListener("click", filterSelected());
-//$countryFilter.addEventListener("click", filterSelected());
-//$durationFilter.addEventListener("click", filterSelected());
+
+// set filter listeners
+var filter = 1
+$dateFilter.addEventListener(click.bs.dropdown,
+    selectFilter);
+$cityFilter.addEventListener("mousedown",
+    selectFilter);
+$stateFilter.addEventListener("mousedown",
+    selectFilter);
+$countryFilter.addEventListener("mousedown",
+    selectFilter);
+$shapeFilter.addEventListener("mousedown",
+    selectFilter);
+$durationFilter.addEventListener("mousedown",
+    selectFilter);
 
 // Create a variable to reference the dataset and the initial filter
-var dataset = dataSet
-//var filterCriteria = datetime
+var dataset = dataSet;
 
 // Define a function to create the table from the data file
 function createTable() {
@@ -59,15 +69,14 @@ function createTable() {
     }
 }
 
-// function for selecting a filter
-//function filterSelected() {
-//    filterCriteria = selectedFilter
-//    console.log(filterCriteria)
-//}
+function selectFilter() {
+    console.log("success");
+}
 
 // function for when you click the button 
 function searchButtonClicked() {
     dataset = dataSet
+
     try {
         // Get search input
         var searchInput = $searchInput.value;
@@ -88,6 +97,9 @@ function reloadButtonClicked() {
     dataset = dataSet
     createTable();
 }
+
+
+function
 
 // Create table
 createTable();
